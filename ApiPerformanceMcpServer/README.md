@@ -24,7 +24,10 @@ dotnet run --project .\ApiPerformanceMcpServer
 
 The server uses MCP stdio transport, so it is meant to be launched by an MCP client rather than opened in a browser.
 
-For a full build, run, verification, and demo workflow, see [docs/EXECUTION_PLAN.md](docs/EXECUTION_PLAN.md).
+For a full build, run, verification, and demo workflow, see:
+
+- [docs/EXECUTION_PLAN.md](docs/EXECUTION_PLAN.md)
+- [docs/EXECUTION_PLAN.html](docs/EXECUTION_PLAN.html)
 
 ## Execution Steps
 
@@ -146,4 +149,5 @@ The tools return errors in the `errors` array for:
 
 - Execution report PDF: [Reports/ApiPerformanceExecutionReport.pdf](Reports/ApiPerformanceExecutionReport.pdf)
 - Report source HTML: [Reports/ApiPerformanceExecutionReport.html](Reports/ApiPerformanceExecutionReport.html)
+- Execution plan HTML: [docs/EXECUTION_PLAN.html](docs/EXECUTION_PLAN.html)
 - LinkedIn post draft: [docs/LINKEDIN_POST.md](docs/LINKEDIN_POST.md)

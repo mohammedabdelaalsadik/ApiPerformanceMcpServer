@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ApiPerformanceMcpServer Execution Plan</title>
+  <style>
+    body {
+      margin: 0;
+      color: #1f2937;
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.55;
+      background: #f8fafc;
+    }
+
+    main {
+      width: min(960px, calc(100% - 32px));
+      margin: 32px auto;
+      padding: 28px;
+      background: #ffffff;
+      border: 1px solid #dbe3ee;
+      border-radius: 8px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      color: #102033;
+      font-size: 30px;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 28px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #dbe3ee;
+      color: #102033;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    code {
+      padding: 2px 5px;
+      background: #eef2f7;
+      border-radius: 4px;
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    pre {
+      overflow-x: auto;
+      padding: 14px;
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    pre code {
+      padding: 0;
+      background: transparent;
+      color: inherit;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #dbe3ee;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eef2f7;
+      color: #102033;
+    }
+
+    .meta {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .callout {
+      margin: 16px 0;
+      padding: 12px 14px;
+      border-left: 5px solid #2166ac;
+      background: #eff6ff;
+      border-radius: 6px;
+    }
+
+    .success {
+      border-left-color: #0f766e;
+      background: #ecfdf5;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>ApiPerformanceMcpServer Execution Plan</h1>
+    <p class="meta">Build, run, verify, and demonstrate the .NET 9 MCP API performance server.</p>
+
+    <h2>1. Prerequisites</h2>
+    <ul>
+      <li>.NET SDK that can target <code>net9.0</code></li>
+      <li>An MCP-compatible client</li>
+      <li>Internet access for live API performance tests</li>
+    </ul>
+
+    <h2>2. Build</h2>
+    <pre><code>cd D:\Teaching\Projects\MCP_Test_Performance
+dotnet build .\ApiPerformanceMcpServer</code></pre>
+    <div class="callout success">
+      Expected result: <code>Build succeeded</code> with <code>0 Warning(s)</code> and <code>0 Error(s)</code>.
+    </div>
+
+    <h2>3. Run Manually</h2>
+    <pre><code>dotnet run --project .\ApiPerformanceMcpServer</code></pre>
+    <p>
+      This is an MCP stdio server. Manual execution starts the process and waits for MCP protocol messages.
+      In normal use, configure an MCP client to launch the command automatically.
+    </p>
+
+    <h2>4. MCP Client Configuration</h2>
+    <pre><code>{
+  "mcpServers": {
+    "api-performance": {
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "D:\\Teaching\\Projects\\MCP_Test_Performance\\ApiPerformanceMcpServer"
+      ]
+    }
+  }
+}</code></pre>
+
+    <h2>5. Available MCP Tools</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>test_api</code></td>
+          <td>Runs repeated GET or POST requests against one API and returns performance statistics.</td>
+        </tr>
+        <tr>
+          <td><code>compare_apis</code></td>
+          <td>Runs the same performance test against two APIs and recommends the faster endpoint.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>6. Test One API</h2>
+    <p>Prompt:</p>
+    <pre><code>Test https://httpbin.org/get performance with 5 iterations.</code></pre>
+    <p>Tool arguments:</p>
+    <pre><code>{
+  "url": "https://httpbin.org/get",
+  "method": "GET",
+  "iterations": 5
+}</code></pre>
+
+    <h2>7. Compare Two APIs</h2>
+    <p>Prompt:</p>
+    <pre><code>Compare https://jsonplaceholder.typicode.com/posts and https://httpbin.org/get 10 times and tell me which is faster.</code></pre>
+    <p>Tool arguments:</p>
+    <pre><code>{
+  "api1Url": "https://jsonplaceholder.typicode.com/posts",
+  "api2Url": "https://httpbin.org/get",
+  "method": "GET",
+  "iterations": 10
+}</code></pre>
+
+    <h2>8. Validate Error Handling</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Case</th>
+          <th>Expected Behavior</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Invalid URL</td>
+          <td>Returns structured JSON with a failure count and an error message.</td>
+        </tr>
+        <tr>
+          <td>Unsupported method</td>
+          <td>Returns structured JSON explaining that only GET and POST are supported.</td>
+        </tr>
+        <tr>
+          <td>Timeout or exception</td>
+          <td>Records the exception message in the <code>errors</code> array.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>9. Generate Report</h2>
+    <pre><code>cd .\ApiPerformanceMcpServer\Reports
+powershell -ExecutionPolicy Bypass -File .\GenerateReportPdf.ps1</code></pre>
+    <p>Output: <code>ApiPerformanceExecutionReport.pdf</code></p>
+
+    <h2>10. Demo Flow</h2>
+    <ol>
+      <li>Show the repository structure.</li>
+      <li>Build the project.</li>
+      <li>Confirm the MCP client discovers <code>test_api</code> and <code>compare_apis</code>.</li>
+      <li>Run <code>test_api</code> against <code>https://httpbin.org/get</code>.</li>
+      <li>Run <code>compare_apis</code> against the two sample APIs.</li>
+      <li>Open the generated execution report.</li>
+    </ol>
+  </main>
+</body>
+</html>
