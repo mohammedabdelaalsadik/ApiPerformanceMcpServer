@@ -1,0 +1,23 @@
+# .NET build output
+bin/
+obj/
+TestResults/
+
+# User and IDE files
+.vs/
+.vscode/
+*.user
+*.suo
+*.rsuser
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Report generation browser profiles
+ApiPerformanceMcpServer/Reports/chrome-profile*/
+
+# OS files
+Thumbs.db
+.DS_Store

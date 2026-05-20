@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>API Performance MCP Server - Execution Report</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #1d2530;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.45;
+      background: #ffffff;
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: 28px;
+      line-height: 1.15;
+      color: #102033;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 24px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #d7dde7;
+      font-size: 17px;
+      color: #102033;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: #102033;
+    }
+
+    .meta {
+      margin-bottom: 22px;
+      color: #566273;
+      font-size: 11px;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 18px 0 22px;
+    }
+
+    .metric {
+      border: 1px solid #d7dde7;
+      border-left: 5px solid #2166ac;
+      padding: 10px 12px;
+      background: #f8fafc;
+      border-radius: 6px;
+      min-height: 78px;
+    }
+
+    .metric strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 20px;
+      color: #102033;
+    }
+
+    .metric span {
+      color: #566273;
+      font-size: 11px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 18px;
+      table-layout: fixed;
+    }
+
+    th, td {
+      border: 1px solid #d7dde7;
+      padding: 7px 8px;
+      text-align: left;
+      vertical-align: top;
+      word-wrap: break-word;
+    }
+
+    th {
+      background: #edf2f7;
+      color: #102033;
+      font-weight: 700;
+    }
+
+    .chart-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .chart {
+      border: 1px solid #d7dde7;
+      border-radius: 6px;
+      padding: 12px;
+      background: #ffffff;
+      break-inside: avoid;
+    }
+
+    .note {
+      margin-top: 8px;
+      padding: 10px 12px;
+      border-left: 5px solid #b45309;
+      background: #fff7ed;
+      color: #3f2a12;
+      border-radius: 6px;
+    }
+
+    .recommendation {
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-left: 5px solid #0f766e;
+      background: #ecfdf5;
+      color: #12372f;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    .footer {
+      margin-top: 28px;
+      padding-top: 8px;
+      border-top: 1px solid #d7dde7;
+      color: #64748b;
+      font-size: 10px;
+    }
+
+    .small {
+      color: #566273;
+      font-size: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>API Performance MCP Server - Execution Report</h1>
+  <p class="meta">
+    Project: ApiPerformanceMcpServer | Runtime: .NET 9 | Transport: MCP stdio |
+    Report date: May 20, 2026
+  </p>
+
+  <h2>Executive Summary</h2>
+  <p>
+    The MCP server was built and verified successfully. The server initialized over MCP,
+    exposed the expected tools, and executed live API performance tests using the configured
+    sample endpoints.
+  </p>
+
+  <div class="summary">
+    <div class="metric">
+      <strong>0</strong>
+      <span>Build warnings and errors</span>
+    </div>
+    <div class="metric">
+      <strong>2</strong>
+      <span>MCP tools discovered: test_api and compare_apis</span>
+    </div>
+    <div class="metric">
+      <strong>115.26 ms</strong>
+      <span>Average latency advantage for httpbin.org in the comparison run</span>
+    </div>
+  </div>
+
+  <h2>Build And MCP Verification</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Check</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>dotnet build</td>
+        <td>Build succeeded with 0 warnings and 0 errors.</td>
+      </tr>
+      <tr>
+        <td>MCP initialize</td>
+        <td>Server initialized as ApiPerformanceMcpServer version 1.0.0.0.</td>
+      </tr>
+      <tr>
+        <td>MCP tools/list</td>
+        <td>Discovered tools: compare_apis, test_api.</td>
+      </tr>
+      <tr>
+        <td>Runtime fix applied</td>
+        <td>Default stdout logging was disabled to keep MCP stdio output protocol-safe.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>test_api Result</h2>
+  <p class="small">Endpoint tested: https://httpbin.org/get | Method: GET | Iterations: 2</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Status Codes</th>
+        <th>Success</th>
+        <th>Failures</th>
+        <th>Average Ms</th>
+        <th>Min Ms</th>
+        <th>Max Ms</th>
+        <th>Total Ms</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>200, 200</td>
+        <td>2</td>
+        <td>0</td>
+        <td>735.85</td>
+        <td>726.81</td>
+        <td>744.89</td>
+        <td>1476.68</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>compare_apis Result</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>API</th>
+        <th>Status Codes</th>
+        <th>Success</th>
+        <th>Failures</th>
+        <th>Average Ms</th>
+        <th>Min Ms</th>
+        <th>Max Ms</th>
+        <th>Total Ms</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>https://jsonplaceholder.typicode.com/posts</td>
+        <td>200</td>
+        <td>1</td>
+        <td>1</td>
+        <td>323.61</td>
+        <td>323.61</td>
+        <td>323.61</td>
+        <td>572.18</td>
+      </tr>
+      <tr>
+        <td>https://httpbin.org/get</td>
+        <td>200, 200</td>
+        <td>2</td>
+        <td>0</td>
+        <td>208.35</td>
+        <td>170.83</td>
+        <td>245.87</td>
+        <td>416.78</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="chart-row">
+    <section class="chart">
+      <h3>Average Response Time</h3>
+      <svg width="100%" height="210" viewBox="0 0 360 210" role="img" aria-label="Average response time chart">
+        <line x1="52" y1="20" x2="52" y2="170" stroke="#94a3b8" />
+        <line x1="52" y1="170" x2="338" y2="170" stroke="#94a3b8" />
+        <text x="52" y="190" font-size="10" fill="#566273">0 ms</text>
+        <text x="15" y="24" font-size="10" fill="#566273">800</text>
+        <rect x="82" y="32" width="78" height="138" fill="#2166ac" />
+        <rect x="218" y="131" width="78" height="39" fill="#0f766e" />
+        <text x="82" y="26" font-size="11" fill="#102033">735.85</text>
+        <text x="218" y="125" font-size="11" fill="#102033">208.35</text>
+        <text x="76" y="195" font-size="10" fill="#102033">test_api</text>
+        <text x="205" y="195" font-size="10" fill="#102033">httpbin compare</text>
+      </svg>
+    </section>
+
+    <section class="chart">
+      <h3>Comparison Average Latency</h3>
+      <svg width="100%" height="210" viewBox="0 0 360 210" role="img" aria-label="Comparison average latency chart">
+        <line x1="52" y1="20" x2="52" y2="170" stroke="#94a3b8" />
+        <line x1="52" y1="170" x2="338" y2="170" stroke="#94a3b8" />
+        <text x="52" y="190" font-size="10" fill="#566273">0 ms</text>
+        <text x="15" y="24" font-size="10" fill="#566273">350</text>
+        <rect x="82" y="31" width="78" height="139" fill="#b45309" />
+        <rect x="218" y="81" width="78" height="89" fill="#0f766e" />
+        <text x="82" y="25" font-size="11" fill="#102033">323.61</text>
+        <text x="218" y="75" font-size="11" fill="#102033">208.35</text>
+        <text x="70" y="195" font-size="10" fill="#102033">API 1</text>
+        <text x="206" y="195" font-size="10" fill="#102033">API 2</text>
+      </svg>
+    </section>
+  </div>
+
+  <div class="chart-row">
+    <section class="chart">
+      <h3>Success And Failure Counts</h3>
+      <svg width="100%" height="210" viewBox="0 0 360 210" role="img" aria-label="Success and failure counts chart">
+        <line x1="52" y1="20" x2="52" y2="170" stroke="#94a3b8" />
+        <line x1="52" y1="170" x2="338" y2="170" stroke="#94a3b8" />
+        <text x="18" y="24" font-size="10" fill="#566273">2</text>
+        <rect x="78" y="95" width="38" height="75" fill="#0f766e" />
+        <rect x="120" y="170" width="38" height="0" fill="#dc2626" />
+        <rect x="210" y="95" width="38" height="75" fill="#0f766e" />
+        <rect x="252" y="170" width="38" height="0" fill="#dc2626" />
+        <text x="85" y="89" font-size="11" fill="#102033">2</text>
+        <text x="259" y="164" font-size="11" fill="#102033">0</text>
+        <text x="68" y="195" font-size="10" fill="#102033">test_api</text>
+        <text x="205" y="195" font-size="10" fill="#102033">httpbin</text>
+        <circle cx="255" cy="23" r="5" fill="#0f766e" />
+        <text x="265" y="27" font-size="10" fill="#102033">success</text>
+        <circle cx="255" cy="43" r="5" fill="#dc2626" />
+        <text x="265" y="47" font-size="10" fill="#102033">failure</text>
+      </svg>
+    </section>
+
+    <section class="chart">
+      <h3>Min To Max Response Range</h3>
+      <svg width="100%" height="210" viewBox="0 0 360 210" role="img" aria-label="Min max range chart">
+        <line x1="52" y1="50" x2="330" y2="50" stroke="#cbd5e1" />
+        <line x1="52" y1="110" x2="330" y2="110" stroke="#cbd5e1" />
+        <line x1="52" y1="170" x2="330" y2="170" stroke="#cbd5e1" />
+        <text x="10" y="54" font-size="10" fill="#566273">test_api</text>
+        <text x="10" y="114" font-size="10" fill="#566273">API 1</text>
+        <text x="10" y="174" font-size="10" fill="#566273">API 2</text>
+        <line x1="305" y1="50" x2="312" y2="50" stroke="#2166ac" stroke-width="8" />
+        <line x1="169" y1="110" x2="169" y2="110" stroke="#b45309" stroke-width="8" />
+        <line x1="101" y1="170" x2="128" y2="170" stroke="#0f766e" stroke-width="8" />
+        <text x="253" y="38" font-size="10" fill="#102033">726.81-744.89 ms</text>
+        <text x="138" y="98" font-size="10" fill="#102033">323.61 ms</text>
+        <text x="86" y="158" font-size="10" fill="#102033">170.83-245.87 ms</text>
+      </svg>
+    </section>
+  </div>
+
+  <h2>Recommendation</h2>
+  <div class="recommendation">
+    Use https://httpbin.org/get for lower average latency in this test. It was faster by
+    115.26 ms and had fewer failures during the comparison run.
+  </div>
+
+  <div class="note">
+    Note: The comparison run recorded one SSL connection failure for
+    https://jsonplaceholder.typicode.com/posts. The tool reported this correctly in the
+    errors array. A larger iteration count is recommended before making a production
+    vendor or architecture decision.
+  </div>
+
+  <div class="footer">
+    Generated from verified MCP execution results for ApiPerformanceMcpServer.
+  </div>
+</body>
+</html>

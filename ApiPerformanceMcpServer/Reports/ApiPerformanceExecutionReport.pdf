@@ -1,0 +1,281 @@
+%PDF-1.4
+% MCP API performance report
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 7 0 R /F2 8 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 7380 >>
+stream
+BT /F2 24 Tf 40 795 Td (API Performance MCP Server - Execution Report) Tj ET
+BT /F1 9 Tf 40 775 Td (Project: ApiPerformanceMcpServer | Runtime: .NET 9 | Transport: MCP stdio | Report date: May 20, 2026) Tj ET
+BT /F2 15 Tf 40 745 Td (Executive Summary) Tj ET
+0.58 0.64 0.72 RG 1.2 w 40 738 m 555 738 l S
+BT /F1 10 Tf 40 723 Td (The MCP server was built and verified successfully. It initialized over MCP, exposed the expected) Tj ET
+BT /F1 10 Tf 40 709 Td (tools, and executed live API performance tests using the configured sample endpoints.) Tj ET
+0.97 0.98 0.99 rg 40 632 160 58 re f
+0.84 0.87 0.91 RG 0.8 w 40 632 160 58 re S
+0.13 0.40 0.67 rg 40 632 5 58 re f
+BT /F2 18 Tf 54 664 Td (0) Tj ET
+BT /F1 9 Tf 54 647 Td (Build warnings and errors) Tj ET
+0.97 0.98 0.99 rg 218 632 160 58 re f
+0.84 0.87 0.91 RG 0.8 w 218 632 160 58 re S
+0.13 0.40 0.67 rg 218 632 5 58 re f
+BT /F2 18 Tf 232 664 Td (2) Tj ET
+BT /F1 9 Tf 232 647 Td (MCP tools discovered) Tj ET
+0.97 0.98 0.99 rg 396 632 160 58 re f
+0.84 0.87 0.91 RG 0.8 w 396 632 160 58 re S
+0.13 0.40 0.67 rg 396 632 5 58 re f
+BT /F2 18 Tf 410 664 Td (115.26 ms) Tj ET
+BT /F1 9 Tf 410 647 Td (Latency advantage for httpbin) Tj ET
+BT /F2 15 Tf 40 595 Td (Build And MCP Verification) Tj ET
+0.58 0.64 0.72 RG 1.2 w 40 588 m 555 588 l S
+0.93 0.95 0.97 rg 40 555 150 24 re f
+0.84 0.87 0.91 RG 0.8 w 40 555 150 24 re S
+BT /F2 8.3 Tf 45 564 Td (Check) Tj ET
+0.93 0.95 0.97 rg 190 555 365 24 re f
+0.84 0.87 0.91 RG 0.8 w 190 555 365 24 re S
+BT /F2 8.3 Tf 195 564 Td (Result) Tj ET
+1 1 1 rg 40 531 150 24 re f
+0.84 0.87 0.91 RG 0.8 w 40 531 150 24 re S
+BT /F1 8.3 Tf 45 540 Td (dotnet build) Tj ET
+1 1 1 rg 190 531 365 24 re f
+0.84 0.87 0.91 RG 0.8 w 190 531 365 24 re S
+BT /F1 8.3 Tf 195 540 Td (Build succeeded with 0 warnings and 0 errors.) Tj ET
+1 1 1 rg 40 507 150 24 re f
+0.84 0.87 0.91 RG 0.8 w 40 507 150 24 re S
+BT /F1 8.3 Tf 45 516 Td (MCP initialize) Tj ET
+1 1 1 rg 190 507 365 24 re f
+0.84 0.87 0.91 RG 0.8 w 190 507 365 24 re S
+BT /F1 8.3 Tf 195 516 Td (Server initialized as ApiPerformanceMcpServer version 1.0.0.0.) Tj ET
+1 1 1 rg 40 483 150 24 re f
+0.84 0.87 0.91 RG 0.8 w 40 483 150 24 re S
+BT /F1 8.3 Tf 45 492 Td (MCP tools/list) Tj ET
+1 1 1 rg 190 483 365 24 re f
+0.84 0.87 0.91 RG 0.8 w 190 483 365 24 re S
+BT /F1 8.3 Tf 195 492 Td (Discovered tools: compare_apis, test_api.) Tj ET
+1 1 1 rg 40 459 150 24 re f
+0.84 0.87 0.91 RG 0.8 w 40 459 150 24 re S
+BT /F1 8.3 Tf 45 468 Td (Runtime fix applied) Tj ET
+1 1 1 rg 190 459 365 24 re f
+0.84 0.87 0.91 RG 0.8 w 190 459 365 24 re S
+BT /F1 8.3 Tf 195 468 Td (Default stdout logging was disabled to keep MCP stdio protocol-safe.) Tj ET
+BT /F2 15 Tf 40 420 Td (test_api Result) Tj ET
+0.58 0.64 0.72 RG 1.2 w 40 413 m 555 413 l S
+BT /F1 9 Tf 40 399 Td (Endpoint tested: https://httpbin.org/get | Method: GET | Iterations: 2) Tj ET
+0.93 0.95 0.97 rg 40 360 72 24 re f
+0.84 0.87 0.91 RG 0.8 w 40 360 72 24 re S
+BT /F2 8.3 Tf 45 369 Td (Status) Tj ET
+0.93 0.95 0.97 rg 112 360 58 24 re f
+0.84 0.87 0.91 RG 0.8 w 112 360 58 24 re S
+BT /F2 8.3 Tf 117 369 Td (Success) Tj ET
+0.93 0.95 0.97 rg 170 360 58 24 re f
+0.84 0.87 0.91 RG 0.8 w 170 360 58 24 re S
+BT /F2 8.3 Tf 175 369 Td (Failure) Tj ET
+0.93 0.95 0.97 rg 228 360 76 24 re f
+0.84 0.87 0.91 RG 0.8 w 228 360 76 24 re S
+BT /F2 8.3 Tf 233 369 Td (Average) Tj ET
+0.93 0.95 0.97 rg 304 360 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 304 360 62 24 re S
+BT /F2 8.3 Tf 309 369 Td (Min) Tj ET
+0.93 0.95 0.97 rg 366 360 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 366 360 62 24 re S
+BT /F2 8.3 Tf 371 369 Td (Max) Tj ET
+0.93 0.95 0.97 rg 428 360 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 428 360 62 24 re S
+BT /F2 8.3 Tf 433 369 Td (Total) Tj ET
+1 1 1 rg 40 336 72 24 re f
+0.84 0.87 0.91 RG 0.8 w 40 336 72 24 re S
+BT /F1 8.3 Tf 45 345 Td (200, 200) Tj ET
+1 1 1 rg 112 336 58 24 re f
+0.84 0.87 0.91 RG 0.8 w 112 336 58 24 re S
+BT /F1 8.3 Tf 117 345 Td (2) Tj ET
+1 1 1 rg 170 336 58 24 re f
+0.84 0.87 0.91 RG 0.8 w 170 336 58 24 re S
+BT /F1 8.3 Tf 175 345 Td (0) Tj ET
+1 1 1 rg 228 336 76 24 re f
+0.84 0.87 0.91 RG 0.8 w 228 336 76 24 re S
+BT /F1 8.3 Tf 233 345 Td (735.85 ms) Tj ET
+1 1 1 rg 304 336 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 304 336 62 24 re S
+BT /F1 8.3 Tf 309 345 Td (726.81) Tj ET
+1 1 1 rg 366 336 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 366 336 62 24 re S
+BT /F1 8.3 Tf 371 345 Td (744.89) Tj ET
+1 1 1 rg 428 336 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 428 336 62 24 re S
+BT /F1 8.3 Tf 433 345 Td (1476.68) Tj ET
+BT /F2 15 Tf 40 300 Td (compare_apis Result) Tj ET
+0.58 0.64 0.72 RG 1.2 w 40 293 m 555 293 l S
+0.93 0.95 0.97 rg 40 260 152 24 re f
+0.84 0.87 0.91 RG 0.8 w 40 260 152 24 re S
+BT /F2 8.3 Tf 45 269 Td (API) Tj ET
+0.93 0.95 0.97 rg 192 260 58 24 re f
+0.84 0.87 0.91 RG 0.8 w 192 260 58 24 re S
+BT /F2 8.3 Tf 197 269 Td (Status) Tj ET
+0.93 0.95 0.97 rg 250 260 58 24 re f
+0.84 0.87 0.91 RG 0.8 w 250 260 58 24 re S
+BT /F2 8.3 Tf 255 269 Td (Success) Tj ET
+0.93 0.95 0.97 rg 308 260 58 24 re f
+0.84 0.87 0.91 RG 0.8 w 308 260 58 24 re S
+BT /F2 8.3 Tf 313 269 Td (Failure) Tj ET
+0.93 0.95 0.97 rg 366 260 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 366 260 62 24 re S
+BT /F2 8.3 Tf 371 269 Td (Average) Tj ET
+0.93 0.95 0.97 rg 428 260 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 428 260 62 24 re S
+BT /F2 8.3 Tf 433 269 Td (Min) Tj ET
+0.93 0.95 0.97 rg 490 260 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 490 260 62 24 re S
+BT /F2 8.3 Tf 495 269 Td (Max) Tj ET
+1 1 1 rg 40 236 152 24 re f
+0.84 0.87 0.91 RG 0.8 w 40 236 152 24 re S
+BT /F1 8.3 Tf 45 245 Td (jsonplaceholder/posts) Tj ET
+1 1 1 rg 192 236 58 24 re f
+0.84 0.87 0.91 RG 0.8 w 192 236 58 24 re S
+BT /F1 8.3 Tf 197 245 Td (200) Tj ET
+1 1 1 rg 250 236 58 24 re f
+0.84 0.87 0.91 RG 0.8 w 250 236 58 24 re S
+BT /F1 8.3 Tf 255 245 Td (1) Tj ET
+1 1 1 rg 308 236 58 24 re f
+0.84 0.87 0.91 RG 0.8 w 308 236 58 24 re S
+BT /F1 8.3 Tf 313 245 Td (1) Tj ET
+1 1 1 rg 366 236 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 366 236 62 24 re S
+BT /F1 8.3 Tf 371 245 Td (323.61) Tj ET
+1 1 1 rg 428 236 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 428 236 62 24 re S
+BT /F1 8.3 Tf 433 245 Td (323.61) Tj ET
+1 1 1 rg 490 236 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 490 236 62 24 re S
+BT /F1 8.3 Tf 495 245 Td (323.61) Tj ET
+1 1 1 rg 40 212 152 24 re f
+0.84 0.87 0.91 RG 0.8 w 40 212 152 24 re S
+BT /F1 8.3 Tf 45 221 Td (httpbin/get) Tj ET
+1 1 1 rg 192 212 58 24 re f
+0.84 0.87 0.91 RG 0.8 w 192 212 58 24 re S
+BT /F1 8.3 Tf 197 221 Td (200,200) Tj ET
+1 1 1 rg 250 212 58 24 re f
+0.84 0.87 0.91 RG 0.8 w 250 212 58 24 re S
+BT /F1 8.3 Tf 255 221 Td (2) Tj ET
+1 1 1 rg 308 212 58 24 re f
+0.84 0.87 0.91 RG 0.8 w 308 212 58 24 re S
+BT /F1 8.3 Tf 313 221 Td (0) Tj ET
+1 1 1 rg 366 212 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 366 212 62 24 re S
+BT /F1 8.3 Tf 371 221 Td (208.35) Tj ET
+1 1 1 rg 428 212 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 428 212 62 24 re S
+BT /F1 8.3 Tf 433 221 Td (170.83) Tj ET
+1 1 1 rg 490 212 62 24 re f
+0.84 0.87 0.91 RG 0.8 w 490 212 62 24 re S
+BT /F1 8.3 Tf 495 221 Td (245.87) Tj ET
+0.93 0.99 0.96 rg 40 146 515 42 re f
+0.84 0.87 0.91 RG 0.8 w 40 146 515 42 re S
+0.06 0.46 0.43 rg 40 146 5 42 re f
+BT /F2 10 Tf 52 171 Td (Recommendation) Tj ET
+BT /F1 9 Tf 52 156 Td (Use https://httpbin.org/get for lower average latency. It was faster by 115.26 ms and had fewer failures.) Tj ET
+
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 7 0 R /F2 8 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 3127 >>
+stream
+BT /F2 20 Tf 40 795 Td (Execution Charts) Tj ET
+1 1 1 rg 40 590 245 165 re f
+0.84 0.87 0.91 RG 0.8 w 40 590 245 165 re S
+BT /F2 11 Tf 52 735 Td (Average Response Time) Tj ET
+0.58 0.64 0.72 RG 1 w 78 625 m 78 720 l S
+0.58 0.64 0.72 RG 1 w 78 625 m 265 625 l S
+BT /F1 7 Tf 78 608 Td (0 ms) Tj ET
+BT /F1 7 Tf 48 718 Td (800 ms) Tj ET
+0.13 0.40 0.67 rg 105 625 48 85 re f
+BT /F1 8 Tf 105 718 Td (735.85) Tj ET
+BT /F1 7 Tf 101 608 Td (test_api) Tj ET
+0.06 0.46 0.43 rg 191 625 48 24 re f
+BT /F1 8 Tf 191 657 Td (208.35) Tj ET
+BT /F1 7 Tf 187 608 Td (httpbin) Tj ET
+1 1 1 rg 310 590 245 165 re f
+0.84 0.87 0.91 RG 0.8 w 310 590 245 165 re S
+BT /F2 11 Tf 322 735 Td (Comparison Average Latency) Tj ET
+0.58 0.64 0.72 RG 1 w 348 625 m 348 720 l S
+0.58 0.64 0.72 RG 1 w 348 625 m 535 625 l S
+BT /F1 7 Tf 348 608 Td (0 ms) Tj ET
+BT /F1 7 Tf 318 718 Td (350 ms) Tj ET
+0.71 0.33 0.04 rg 375 625 48 85 re f
+BT /F1 8 Tf 375 718 Td (323.61) Tj ET
+BT /F1 7 Tf 371 608 Td (API 1) Tj ET
+0.06 0.46 0.43 rg 461 625 48 55 re f
+BT /F1 8 Tf 461 688 Td (208.35) Tj ET
+BT /F1 7 Tf 457 608 Td (API 2) Tj ET
+1 1 1 rg 40 390 245 165 re f
+0.84 0.87 0.91 RG 0.8 w 40 390 245 165 re S
+BT /F2 11 Tf 52 535 Td (Success Count) Tj ET
+0.58 0.64 0.72 RG 1 w 78 425 m 78 520 l S
+0.58 0.64 0.72 RG 1 w 78 425 m 265 425 l S
+BT /F1 7 Tf 78 408 Td (0 ms) Tj ET
+BT /F1 7 Tf 48 518 Td (2 ms) Tj ET
+0.06 0.46 0.43 rg 105 425 48 92 re f
+BT /F1 8 Tf 105 525 Td (2) Tj ET
+BT /F1 7 Tf 101 408 Td (test_api) Tj ET
+0.06 0.46 0.43 rg 191 425 48 92 re f
+BT /F1 8 Tf 191 525 Td (2) Tj ET
+BT /F1 7 Tf 187 408 Td (httpbin) Tj ET
+1 1 1 rg 310 390 245 165 re f
+0.84 0.87 0.91 RG 0.8 w 310 390 245 165 re S
+BT /F2 11 Tf 322 535 Td (Failure Count) Tj ET
+0.58 0.64 0.72 RG 1 w 348 425 m 348 520 l S
+0.58 0.64 0.72 RG 1 w 348 425 m 535 425 l S
+BT /F1 7 Tf 348 408 Td (0 ms) Tj ET
+BT /F1 7 Tf 318 518 Td (2 ms) Tj ET
+0.86 0.15 0.15 rg 375 425 48 46 re f
+BT /F1 8 Tf 375 479 Td (1) Tj ET
+BT /F1 7 Tf 371 408 Td (API 1) Tj ET
+0.06 0.46 0.43 rg 461 425 48 1 re f
+BT /F1 8 Tf 461 434 Td (0) Tj ET
+BT /F1 7 Tf 457 408 Td (API 2) Tj ET
+BT /F2 15 Tf 40 340 Td (Observations) Tj ET
+0.58 0.64 0.72 RG 1.2 w 40 333 m 555 333 l S
+BT /F1 10 Tf 40 318 Td (1. The MCP server exposed both required tools and returned structured JSON output.) Tj ET
+BT /F1 10 Tf 40 301 Td (2. httpbin.org/get completed both comparison iterations successfully and had the lower average latency.) Tj ET
+BT /F1 10 Tf 40 284 Td (3. jsonplaceholder.typicode.com/posts recorded one SSL connection failure during the comparison run.) Tj ET
+BT /F1 10 Tf 40 267 Td (4. A larger iteration count is recommended before using these numbers for production decisions.) Tj ET
+1 0.97 0.93 rg 40 205 515 46 re f
+0.84 0.87 0.91 RG 0.8 w 40 205 515 46 re S
+0.71 0.33 0.04 rg 40 205 5 46 re f
+BT /F2 10 Tf 52 231 Td (Note) Tj ET
+BT /F1 9 Tf 52 216 Td (The comparison run includes a reported SSL error for API 1. This confirms error handling is visible in final output.) Tj ET
+BT /F1 8 Tf 40 50 Td (Generated from verified MCP execution results for ApiPerformanceMcpServer.) Tj ET
+
+endstream
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+8 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000040 00000 n 
+0000000092 00000 n 
+0000000158 00000 n 
+0000000297 00000 n 
+0000007732 00000 n 
+0000007871 00000 n 
+0000011053 00000 n 
+0000011126 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+11204
+%%EOF
