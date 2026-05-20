@@ -31,6 +31,6 @@ The repo includes:
 This was a useful exercise in turning a simple performance testing workflow into an MCP tool that can be called directly from an AI client.
 
 Repository:
-<paste GitHub repo URL here>
+https://github.com/mohammedabdelaalsadik/ApiPerformanceMcpServer
 
 #dotnet #csharp #mcp #modelcontextprotocol #api #performance #softwareengineering #ai
